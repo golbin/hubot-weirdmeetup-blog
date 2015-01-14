@@ -20,7 +20,6 @@
     "grunt": "*",
     "grunt-cli": "*",
     "grunt-simple-mocha": "*",
-    "grunt-notify": "*",
     "grunt-coffeelint": "*",
     "grunt-contrib-watch": "git+https://github.com/gruntjs/grunt-contrib-watch"
   },

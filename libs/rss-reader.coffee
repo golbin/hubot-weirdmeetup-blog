@@ -33,11 +33,11 @@ module.exports = class RSSReader
       entries = []
       feedparser.on 'data', (chunk) =>
         entry =
-          url: chunk.link
+          url: chunk.guid
           title: chunk.title
           author: chunk.author
           toString: ->
-            s = "<#{@url}|#{@title}> by <@U#{@author}>"
+            s = "#{@title} - #{@url} by @#{@author}"
             return s
 
         entries.push entry

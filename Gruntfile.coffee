@@ -39,7 +39,7 @@ module.exports = (grunt) ->
         compilers: 'coffee:coffee-script'
         ignoreLeaks: no
       dist:
-        src: [ 'tests/test_*.coffee' ]
+        src: [ 'tests/*.coffee' ]
 
     watch:
       options:
