@@ -37,7 +37,7 @@ module.exports = class RSSReader
           title: chunk.title
           author: chunk.author
           toString: ->
-            s = "<#{@url}|#{@title}> by @#{@author}"
+            s = "<#{@url}|#{@title}> by <@U#{@author}>"
             return s
 
         entries.push entry
