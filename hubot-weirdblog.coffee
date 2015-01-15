@@ -19,13 +19,18 @@ BLOG_FEED_URL = 'http://we.weirdmeetup.com/feed/'
 CACHE_EXPIRES = 300 * 1000# milliseconds
 CACHED_TIME = 0
 CACHED_ENTRIES = []
+DEFAULT_POST_NUM = 3
 
 module.exports = (robot) ->
   reader = new RSSReader robot
 
-  robot.respond /blog/i, (msg) ->
+  robot.respond /blog(\s*[0-9]*)/i, (msg) ->
+    size = DEFAULT_POST_NUM
+    if msg.match[1]
+      size = msg.match[1].trim()
+
     if CACHED_ENTRIES.length > 0
-      for entry in CACHED_ENTRIES.splice(0,5)
+      for entry in CACHED_ENTRIES.splice(0, size)
         msg.send entry.toString()
       msg.send "갱신시간: " + new Date(CACHED_TIME)
 

@@ -1,6 +1,6 @@
 {
   "name": "hubot-weirdmeetup-blog",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Hubot WeirdMeetup Blog Reader",
   "main": "hubot-weirdblog.coffee",
   "scripts": {
